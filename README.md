@@ -18,10 +18,10 @@ Download script wherever you like.
 $ curl https://raw.githubusercontent.com/kit494way/swa/master/swa.bash -o ~/swa.bash
 ```
 
-Set alias to source the script.
+Source the script in .bashrc.
 
 ```sh
-$ alias swa="source ~/swa.bash"
+$ echo 'source ${HOME}/swa.bash' >>~/.bashrc
 ```
 
 **The script swa.bash is intended to be sourced.**
