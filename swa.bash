@@ -65,6 +65,9 @@ _swa_assume_role() {
   export AWS_SECRET_ACCESS_KEY="${credentials[1]}"
   export AWS_SESSION_TOKEN="${credentials[2]}"
 
+  _SWA_PS1_ORG="${PS1}"
+  PS1="(${role_arn})${_SWA_PS1_ORG}"
+
   echo "AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_SESSION_TOKEN were exported."
 }
 
