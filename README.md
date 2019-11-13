@@ -2,8 +2,7 @@
 
 Switch aws cli profile.
 
-This script shows the profile names read from ~/.aws/config, and set the selected name to the envionment variable `AWS_PROFILE`.
-`PS1` is also changed when a profile other than default is selected.
+This script set the selected profile name to the envionment variable `AWS_PROFILE` or export variables `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN`.
 
 ## Prerequisite
 
@@ -12,16 +11,17 @@ This script shows the profile names read from ~/.aws/config, and set the selecte
 
 ## Install
 
-Download script wherever you like.
+Clone this repository.
 
 ```sh
-$ curl https://raw.githubusercontent.com/kit494way/swa/master/swa.bash -o ~/swa.bash
+$ cd ${HOME}
+$ git clone https://github.com/kit494way/swa.git
 ```
 
 Source the script in .bashrc.
 
 ```sh
-$ echo 'source ${HOME}/swa.bash' >>~/.bashrc
+$ echo 'source ${HOME}/swa/swa.bash' >>~/.bashrc
 ```
 
 **The script swa.bash is intended to be sourced.**
