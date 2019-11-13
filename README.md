@@ -42,3 +42,6 @@ Select aws profile:
 ```
 
 Enter the number preceding the profile you want to switch.
+
+If selected profile is configured for switch role, execute `aws sts assume-role` and export `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_SESSION_TOKEN` variables.
+When switched that profile, MFA token is required.
