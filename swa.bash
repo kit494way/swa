@@ -47,7 +47,7 @@ _swa_assume_role() {
   unset AWS_PROFILE
 
   local code=""
-  read -p "Enter MFA code for ${mfa_serial} " code
+  read -s -p "Enter MFA code for ${mfa_serial} " code
 
   local credentials=($(aws --profile "${source_profile}" sts assume-role \
     --role-arn "${role_arn}" \
