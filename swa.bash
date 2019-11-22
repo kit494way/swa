@@ -38,6 +38,10 @@ _swa_assume_role() {
   local role_arn="${2}"
   local source_profile="${3}"
   local mfa_serial="${4}"
+  declare -A params
+  if [[ -f "${HOME}/.swa/config" ]]; then
+    eval "params=($(gawk -f ${basedir}/extract-swa-config.awk -v profile=${profile} ~/.swa/config))"
+  fi
 
   if [[ -n "${_SWA_PS1_ORG}" ]]; then
     PS1="${_SWA_PS1_ORG}"
@@ -54,6 +58,7 @@ _swa_assume_role() {
     --role-session-name swa \
     --serial-number "${mfa_serial}" \
     --token-code "${code}" \
+    --duration-seconds "${params[duration]:-3600}" \
     --output text --query 'Credentials | [AccessKeyId, SecretAccessKey, SessionToken] | join(`" "`, @)'))
 
   if [[ "${#credentials[@]}" -ne 3 ]]; then

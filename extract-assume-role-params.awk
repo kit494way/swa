@@ -1,11 +1,11 @@
 # `profile` variable is required.
-# (e.g. gawk this-script.awk -v profile=<profile-name> ~/.aws/config)
+# (e.g. gawk -f this-script.awk -v profile=<profile-name> ~/.aws/config)
 
 BEGIN {
-  section = "";
-  role_arn = "";
-  source_profile = "";
-  mfa_serial = "";
+  section = ""
+  role_arn = ""
+  source_profile = ""
+  mfa_serial = ""
 }
 
 match($0,/\[(profile )?(.+)\]/,a) {
